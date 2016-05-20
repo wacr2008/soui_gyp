@@ -1,0 +1,7 @@
+# https://code.google.com/p/webrtc/issues/detail?id=2396
+ChannelManagerTest.StartupShutdownOnThread
+PortTest.*
+P2PTransportChannel*
+DtlsTransportChannelTest.*
+RelayPortTest.*
+PortAllocatorTest.*

@@ -1,0 +1,31 @@
+还是要说一句，soui这个库不错，虽然在透明这块的刷新还是有问题……。
+不要问我为什么不用cmake，就是不喜欢。
+也不要问我为什么用gyp,我喜欢。。
+
+1.如何编绎，生成vs工程?
+根据soui使用者的习惯，如果我不提供ninja.exe，估计很多人要骂我了。所以我补上它了。
+
+你只需要安装vs2008,vs2013express,vs2013 Community或者vs2015 任意一个。
+然后运行gen.bat,它就会生成all.sln解决方案了。
+
+然后，再运行startVS.bat启动vs就可以编绎了。
+
+如果你习惯了命令行而同时又使用了vs2013的话，可以直接ninja -C out/Debug targetname来编绎
+默认用的是msvs-ninja和ninja都生成的，当然gyp中未有实现vs2008与ninja集成。
+
+2.如何不安装vs开发工具就可以直接编绎？
+很简单，打开set DEPOT_TOOLS_WIN_TOOLCHAIN=1，然后修改SOUI/build/win_toolchain.json文件中路径，指向vs2013文件 的路径就可以了。
+从哪里找vs2013files这个目录？呵呵，我是有一份的，因为太大，就不上传了，老老实实安装一个vs的ide吧。
+
+3.你喜欢vs2013 community版本怎么办？
+我也喜欢，不过无奈机器差，不能安装这些ide……，很简单的，只需要修改setevn.bat中的set GYP_MSVS_VERSION=2013再生成工程就好了。
+
+4.你想编绎出全静态library的soui，比如你要用soui制作安装包应用？
+很简单，可以尝试一下set GYP_DEFINES=component=static_library  buildtype=Official，再生成的工程就是MT的了。
+详细你可以看SOUI\build\common.gypi中的2420行处理。
+
+5.为何我双击all.sln编绎不了？
+很正常。ninja找不到或者ninja编绎时候依赖python，然后环境变量没有设置了。直接用startVS.bat就好了。如果你喜欢自己在系统中配置，也是可以的。
+
+6.为何工程有很多webrtc,chrome的宏？
+很正常，这东西本来就是多从webrtc中代码中拿出来的，如果你不想要这些宏，可以自己修改SOUI/build/common.gypi中，去掉那些变量和宏就好了。

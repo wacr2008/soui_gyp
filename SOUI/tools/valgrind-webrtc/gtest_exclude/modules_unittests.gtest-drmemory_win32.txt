@@ -1,0 +1,18 @@
+# Too slow to run with Dr Memory on Windows.
+ApmTest.EchoCancellationReportsCorrectDelays
+ApmTest.FloatAndIntInterfacesGiveIdenticalResults
+ApmTest.IdenticalInputChannelsResultInIdenticalOutputChannels
+ApmTest.VerifyDebugDumpFloat
+ApmTest.VerifyDebugDumpInt
+CommonFormats/AudioProcessingTest*
+TestScaler.PointScaleTest
+TestScaler.BiLinearScaleTest
+TestScaler.BoxScaleTest
+TestVideoSenderWithVp8.*
+TestVp8Impl.BaseUnitTest
+VideoProcessingModuleTest.Denoising
+VideoProcessorIntegrationTest.ProcessNoLossChangeBitRate
+VideoSendersTest.*
+
+# https://code.google.com/p/webrtc/issues/detail?id=2323
+MouseCursorShapeTest.MatchCursors
