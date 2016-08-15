@@ -15,7 +15,6 @@
 			
 			#source files  
 			'pugixml/pugixml.cpp',
-			'pugixml/pugixml.cpp',
 			'uiresImporter.cpp',
 			'XGetopt.cpp',
 
